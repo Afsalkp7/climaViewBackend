@@ -1,8 +1,9 @@
 const express = require("express");
 const axios = require("axios");
 const app = express();
+const cors = require("cors")
 const PORT = process.env.PORT || 3000;
-
+app.use(cors()) 
 app.get('/', async (req, res) => {
     try {
         const response = await axios.get("https://api.openweathermap.org/data/3.0/onecall", {
